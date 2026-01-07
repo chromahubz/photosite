@@ -63,14 +63,14 @@ export default function GalleryPage() {
       <SplitHeader />
 
       <main className="flex-1" style={{ paddingTop: 'var(--header-height)' }}>
-        {/* Gallery Header - GENEROUS MARGIN */}
-        <section className={`${spacing.section} bg-bg`}>
-          <div className="container">
+        {/* Gallery Header - FULLY CENTERED */}
+        <section className={`${spacing.section} bg-bg flex justify-center`}>
+          <div className="max-w-7xl w-full px-30 text-center">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-6xl md:text-8xl font-black uppercase mb-20"
+              className="text-6xl md:text-8xl font-black uppercase mb-20 mx-auto"
               style={{ lineHeight: '1.2' }}
             >
               PHOTO
@@ -78,12 +78,12 @@ export default function GalleryPage() {
               <span className="text-accent">GALLERY</span>
             </motion.h1>
 
-            {/* Category Filters - MORE SPACE */}
+            {/* Category Filters - FULLY CENTERED */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`flex flex-wrap ${spacing.gridDense} mb-24`}
+              className={`flex flex-wrap ${spacing.gridDense} mb-24 justify-center mx-auto`}
             >
               {categories.map((category) => (
                 <BoldButton
@@ -99,10 +99,10 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        {/* Photo Grid - 32px gaps (comfortable) */}
-        <section className={`${spacing.section} bg-surface`}>
-          <div className="container">
-            <div className={`grid md:grid-cols-2 lg:grid-cols-3 ${spacing.gridComfortable}`}>
+        {/* Photo Grid - 4 COLUMNS SYMMETRICAL CENTERED */}
+        <section className={`${spacing.section} bg-surface flex justify-center`}>
+          <div className="max-w-7xl w-full px-30">
+            <div className={`grid grid-cols-2 lg:grid-cols-4 ${spacing.gridComfortable} mx-auto`}>
               {filteredPhotos.map((photo, index) => (
                 <motion.div
                   key={photo.id}

@@ -45,20 +45,20 @@ export function Footer() {
         <div className={`grid md:grid-cols-4 ${spacing.footerColumns} mb-16`}>
           {/* Column 1: Brand */}
           <div>
-            <h3 className="text-5xl font-black uppercase leading-none mb-6">
+            <h3 className="text-5xl font-black uppercase mb-6" style={{ lineHeight: '1' }}>
               OPAL<span className="text-accent">AURA</span>
             </h3>
-            <p className="text-text-secondary text-base font-bold uppercase mb-8">
+            <p className="text-text-secondary text-base font-bold uppercase mb-8" style={{ lineHeight: '1.2' }}>
               Fine Art Photography
             </p>
-            <p className="text-text-muted text-sm font-bold uppercase">
+            <p className="text-text-muted text-sm font-bold uppercase" style={{ lineHeight: '1.2' }}>
               Belgrade, Serbia
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-xl font-black uppercase mb-8 text-accent tracking-widest">
+            <h4 className="text-xl font-black uppercase mb-8 text-accent tracking-widest" style={{ lineHeight: '1.2' }}>
               NAVIGATE
             </h4>
             <div className={`flex flex-col ${spacing.footerLinks}`}>
@@ -67,6 +67,7 @@ export function Footer() {
                   key={link.name}
                   href={link.href}
                   className="text-base font-bold uppercase hover:text-accent transition-all duration-200 hover:scale-105 inline-block w-fit"
+                  style={{ lineHeight: '1.2' }}
                 >
                   {link.name}
                 </Link>
@@ -76,13 +77,14 @@ export function Footer() {
 
           {/* Column 3: Social Links */}
           <div>
-            <h4 className="text-xl font-black uppercase mb-8 text-accent tracking-widest">
+            <h4 className="text-xl font-black uppercase mb-8 text-accent tracking-widest" style={{ lineHeight: '1.2' }}>
               CONNECT
             </h4>
             <div className={`flex flex-col ${spacing.footerLinks}`}>
               <a
                 href={`mailto:${contactInfo.email}`}
                 className="flex items-center gap-3 text-base font-bold uppercase hover:text-accent transition-all duration-200 hover:scale-105"
+                style={{ lineHeight: '1.2' }}
               >
                 <Mail size={24} strokeWidth={3} />
                 EMAIL
@@ -93,6 +95,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-base font-bold uppercase hover:text-accent transition-all duration-200 hover:scale-105"
+                  style={{ lineHeight: '1.2' }}
                 >
                   <Instagram size={24} strokeWidth={3} />
                   INSTAGRAM
@@ -103,10 +106,10 @@ export function Footer() {
 
           {/* Column 4: Newsletter */}
           <div>
-            <h4 className="text-xl font-black uppercase mb-8 text-accent tracking-widest">
+            <h4 className="text-xl font-black uppercase mb-8 text-accent tracking-widest" style={{ lineHeight: '1.2' }}>
               NEWSLETTER
             </h4>
-            <p className="text-text-secondary text-sm font-bold mb-6 uppercase">
+            <p className="text-text-secondary text-sm font-bold mb-6 uppercase" style={{ lineHeight: '1.2' }}>
               Get updates on new work
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-4">
@@ -143,10 +146,10 @@ export function Footer() {
         {/* Copyright Bar - 48px padding above */}
         <div className="pt-12 border-t-2 border-border">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <p className="text-text-muted text-sm font-bold uppercase">
+            <p className="text-text-muted text-sm font-bold uppercase" style={{ lineHeight: '1.2' }}>
               © {currentYear} OPAL AURA PHOTO. ALL RIGHTS RESERVED.
             </p>
-            <p className="text-text-muted text-xs font-bold uppercase">
+            <p className="text-text-muted text-xs font-bold uppercase" style={{ lineHeight: '1.2' }}>
               DESIGNED & BUILT IN BELGRADE
             </p>
           </div>

@@ -37,7 +37,7 @@
      COMPONENT SPACING - SUPER GENEROUS
      Applied to layout elements
      ======================================== */
-  --header-height: 120px;
+  --header-height: 80px;          /* REDUCED for less vertical padding */
   --section-padding-y: 160px;     /* py-40 - DOUBLED */
   --section-padding-y-compact: 120px;  /* py-30 */
   --container-padding-x: 120px;   /* px-30 - DOUBLED */

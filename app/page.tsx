@@ -43,7 +43,7 @@ export default function HomePage() {
 
               {/* Subtitle - MORE LINE SPACING */}
               <p className="text-2xl md:text-3xl font-bold uppercase text-text-secondary mb-24 tracking-wider max-w-4xl" style={{ lineHeight: '1.6' }}>
-                FINE ART PHOTOGRAPHY / BRUTAL AESTHETIC / BELGRADE BASED
+                ARTISTIC PORTRAITS / GENUINE BEAUTY / AUTHENTIC MOMENTS
               </p>
 
               {/* CTAs - 32px gap between buttons */}
