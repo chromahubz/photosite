@@ -20,8 +20,23 @@ const navigation = [
   { name: 'CONTACT', href: '/contact' },
 ];
 
+const colors = [
+  '#ff0066', // accent pink
+  '#ffffff', // white
+  '#cccccc', // light gray
+  '#999999', // medium gray
+  '#cc0052', // darker pink
+  '#ff3385', // lighter pink
+];
+
 export function SplitHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentColor, setCurrentColor] = useState('#ffffff');
+
+  const handleLogoHover = () => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    setCurrentColor(randomColor);
+  };
 
   return (
     <>
@@ -34,9 +49,16 @@ export function SplitHeader() {
           {/* Logo/Brand - Left */}
           <Link
             href="/"
-            className="text-4xl font-black uppercase tracking-tighter hover:text-accent transition-all duration-200 hover:scale-110"
+            className="text-4xl font-black uppercase tracking-tighter transition-all duration-300 group hover:tracking-wide"
+            onMouseEnter={handleLogoHover}
           >
-            OPAL<span className="text-accent">AURA</span>
+            <span
+              style={{ color: currentColor }}
+              className="transition-all duration-300"
+            >
+              OPAL
+            </span>
+            <span className="text-accent transition-all duration-300">AURA</span>
           </Link>
 
           {/* Desktop Navigation - Right */}
@@ -45,7 +67,7 @@ export function SplitHeader() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-black uppercase tracking-widest hover:text-accent transition-all duration-200 hover:scale-125 active:scale-110"
+                className="text-sm font-black uppercase tracking-widest hover:text-accent transition-colors duration-200"
               >
                 {item.name}
               </Link>

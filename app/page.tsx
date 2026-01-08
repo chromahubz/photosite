@@ -21,45 +21,69 @@ export default function HomePage() {
       <SplitHeader />
 
       <main className="flex-1" style={{ paddingTop: 'var(--header-height)' }}>
-        {/* Hero Section - Oversized Typography with Professional Spacing */}
+        {/* Hero Section - Split Layout with Image */}
         <section className="min-h-screen flex items-center justify-center bg-bg">
           <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            >
-              {/* Location Badge - MUCH MORE SPACE */}
-              <div className="inline-flex items-center justify-center mb-24 px-12 py-6 border-3 border-accent">
-                <span className="text-sm font-black uppercase tracking-widest">
-                  BELGRADE, SERBIA
-                </span>
-              </div>
+            <div className="grid lg:grid-cols-2 gap-32 items-center">
+              {/* Left Side - Text Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              >
+                {/* Location Badge */}
+                <div className="inline-flex items-center justify-center mb-16 px-12 py-6 border-3 border-accent">
+                  <span className="text-sm font-black uppercase tracking-widest">
+                    BELGRADE, SERBIA
+                  </span>
+                </div>
 
-              {/* Massive Heading - MORE VERTICAL SPACE */}
-              <h1 className="text-8xl md:text-9xl font-black uppercase tracking-tighter mb-20" style={{ lineHeight: '1.2' }}>
-                OPAL<span className="text-accent">AURA</span>
-              </h1>
+                {/* Massive Heading */}
+                <h1 className="text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter mb-3" style={{ lineHeight: '1.1' }}>
+                  OPAL<span className="text-accent">AURA</span>
+                </h1>
 
-              {/* Subtitle - MORE LINE SPACING */}
-              <p className="text-2xl md:text-3xl font-bold uppercase text-text-secondary mb-24 tracking-wider max-w-4xl" style={{ lineHeight: '1.6' }}>
-                ARTISTIC PORTRAITS / GENUINE BEAUTY / AUTHENTIC MOMENTS
-              </p>
+                {/* Studio Label */}
+                <p className="text-lg md:text-xl font-black uppercase tracking-widest text-text-muted mb-8">
+                  PHOTOGRAPHY STUDIO
+                </p>
 
-              {/* CTAs - 32px gap between buttons */}
-              <div className={`flex flex-col sm:flex-row items-start ${spacing.buttonGroup}`}>
-                <Link href="/gallery">
-                  <BoldButton size="lg" variant="primary">
-                    VIEW WORK
-                  </BoldButton>
-                </Link>
-                <Link href="/contact">
-                  <BoldButton size="lg" variant="outline">
-                    BOOK NOW
-                  </BoldButton>
-                </Link>
-              </div>
-            </motion.div>
+                {/* Subtitle */}
+                <p className="text-xl md:text-2xl font-bold uppercase text-text-secondary mb-16 tracking-wider" style={{ lineHeight: '1.5' }}>
+                  ARTISTIC PORTRAITS / GENUINE BEAUTY / AUTHENTIC MOMENTS
+                </p>
+
+                {/* CTAs */}
+                <div className={`flex flex-col sm:flex-row items-start ${spacing.buttonGroup}`}>
+                  <Link href="/gallery">
+                    <BoldButton size="lg" variant="primary">
+                      VIEW WORK
+                    </BoldButton>
+                  </Link>
+                  <Link href="/contact">
+                    <BoldButton size="lg" variant="outline">
+                      BOOK NOW
+                    </BoldButton>
+                  </Link>
+                </div>
+              </motion.div>
+
+              {/* Right Side - Featured Image */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+                className="relative hidden lg:block"
+              >
+                <div className="border-4 border-accent overflow-hidden">
+                  <img
+                    src="https://picsum.photos/seed/hero/800/1000?grayscale"
+                    alt="Featured photography work"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
